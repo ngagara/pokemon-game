@@ -2,11 +2,8 @@ import l from './layout.module.css';
 
 const Layout = ({id, title, desc, urlBg, colorBg}) => {
 
-    const wrapperStyle = urlBg ? {background: `url(${urlBg})`} : {background: colorBg};
-    
     return (
-      <>
-        <section className={l.root} id={id} style={wrapperStyle}>
+        <section className={l.root} id={id} style={ urlBg ? { backgroundImage: `url(${urlBg})`} : { backgroundColor: colorBg }}>
             <div className={l.wrapper}>
                 <article>
                     <div className={l.title}>
@@ -19,7 +16,6 @@ const Layout = ({id, title, desc, urlBg, colorBg}) => {
                 </article>
             </div>
         </section>
-      </>
     );
   }
 

@@ -9,9 +9,9 @@ function App() {
   return (
     <>
     <Header title="This is title" desc="This is Description!"/>
-    <Layout id="1" title="some title" desc="some description" urlBg={bg} colorBg={false}/>
-    <Layout id="2" title="some title" desc="some description" urlBg={false} colorBg="#00FFFF"/>
-    <Layout id="3" title="some title" desc="some description" urlBg={bg} colorBg={false}/>
+    <Layout id="1" title="some title" desc="some description" urlBg={bg}/>
+    <Layout id="2" title="some title" desc="some description" colorBg="#00FFFF"/>
+    <Layout id="3" title="some title" desc="some description" urlBg={bg}/>
     <Footer />
     </>
   );
