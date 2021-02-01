@@ -1,10 +1,10 @@
-import h from './header.module.css';
+import style from './header.module.css';
 
 const Header = ({title, desc}) => {
     return (
-      <header className={h.root}>
-      <div className={h.forest}></div>
-          <div className={h.container}>
+      <header className={style.root}>
+      <div className={style.forest}></div>
+          <div className={style.container}>
             <h1>{title}</h1>
             <p>{desc}</p>
           </div>
@@ -12,4 +12,4 @@ const Header = ({title, desc}) => {
     );
   }
   
-export default Header;
+export default Header

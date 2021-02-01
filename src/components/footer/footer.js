@@ -1,9 +1,9 @@
-import f from './footer.module.css';
+import style from './footer.module.css';
 
 const Footer = () => {
     return (
        <footer>
-           <div className={f.wrapper}>
+           <div className={style.wrapper}>
                <h3>THANKS FOR VISITING</h3>
                <p>© 2021 #ReactMarathon.</p>
            </div>
