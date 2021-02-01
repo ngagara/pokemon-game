@@ -1,17 +1,17 @@
-import l from './layout.module.css';
+import style from './layout.module.css';
 
-const Layout = ({id, title, desc, urlBg, colorBg}) => {
+const Layout = ({id, title, desc, urlBg, colorBg, children}) => {
 
     return (
-        <section className={l.root} id={id} style={ urlBg ? { backgroundImage: `url(${urlBg})`} : { backgroundColor: colorBg }}>
-            <div className={l.wrapper}>
+        <section className={style.root} id={id} style={ urlBg ? { backgroundImage: `url(${urlBg})`} : { backgroundColor: colorBg }}>
+            <div className={style.wrapper}>
                 <article>
-                    <div className={l.title}>
+                    <div className={style.title}>
                         <h3>{title}</h3>
-                        <span className={l.eparator}></span>
+                        <span className={style.eparator}></span>
                     </div>
-                    <div className={`${l.desc} ${l.full}`}>
-                    <p>{desc}</p>
+                    <div className={`${style.desc} ${style.full}`}>
+                    {children}
                     </div>
                 </article>
             </div>
