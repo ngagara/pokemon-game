@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.da763a97.chunk.css",
-    "main.js": "/static/js/main.72b2b2df.chunk.js",
-    "main.js.map": "/static/js/main.72b2b2df.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9cf1b2db.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9cf1b2db.js.map",
-    "static/js/2.6514a8ac.chunk.js": "/static/js/2.6514a8ac.chunk.js",
-    "static/js/2.6514a8ac.chunk.js.map": "/static/js/2.6514a8ac.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.da763a97.chunk.css.map": "/static/css/main.da763a97.chunk.css.map",
-    "static/js/2.6514a8ac.chunk.js.LICENSE.txt": "/static/js/2.6514a8ac.chunk.js.LICENSE.txt",
-    "static/media/header.module.css": "/static/media/Trees.588e4000.svg",
-    "static/media/bg.59f1c1e9.jpg": "/static/media/bg.59f1c1e9.jpg"
+    "main.css": "/pokemon-game/static/css/main.bdba1770.chunk.css",
+    "main.js": "/pokemon-game/static/js/main.72b2b2df.chunk.js",
+    "main.js.map": "/pokemon-game/static/js/main.72b2b2df.chunk.js.map",
+    "runtime-main.js": "/pokemon-game/static/js/runtime-main.c623b3fc.js",
+    "runtime-main.js.map": "/pokemon-game/static/js/runtime-main.c623b3fc.js.map",
+    "static/js/2.6514a8ac.chunk.js": "/pokemon-game/static/js/2.6514a8ac.chunk.js",
+    "static/js/2.6514a8ac.chunk.js.map": "/pokemon-game/static/js/2.6514a8ac.chunk.js.map",
+    "index.html": "/pokemon-game/index.html",
+    "static/css/main.bdba1770.chunk.css.map": "/pokemon-game/static/css/main.bdba1770.chunk.css.map",
+    "static/js/2.6514a8ac.chunk.js.LICENSE.txt": "/pokemon-game/static/js/2.6514a8ac.chunk.js.LICENSE.txt",
+    "static/media/header.module.css": "/pokemon-game/static/media/Trees.588e4000.svg",
+    "static/media/bg.59f1c1e9.jpg": "/pokemon-game/static/media/bg.59f1c1e9.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9cf1b2db.js",
+    "static/js/runtime-main.c623b3fc.js",
     "static/js/2.6514a8ac.chunk.js",
-    "static/css/main.da763a97.chunk.css",
+    "static/css/main.bdba1770.chunk.css",
     "static/js/main.72b2b2df.chunk.js"
   ]
 }
