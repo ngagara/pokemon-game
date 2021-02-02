@@ -12,7 +12,12 @@ const HeaderMenu = () => {
 
   switch (isActive) {
     case true:
-      return <Menu onClickMenu={handleChangeMenu} state={isActive}/>;
+      return (
+        <>
+        <NavBar onClickMenu={handleChangeMenu} state={isActive}/>
+        <Menu onClickMenu={handleChangeMenu} state={isActive}/>
+        </>
+      )
     case false:
       return <NavBar onClickMenu={handleChangeMenu} state={isActive}/>;
   }

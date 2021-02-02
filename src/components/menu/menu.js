@@ -7,12 +7,15 @@ import NavBar from '../nav-bar/nav-bar';
 
 const Menu = ({onClickMenu, state}) => {
 
+  const [isActive, setActive] = useState(false);
+
     const handleClick = () => {
         onClickMenu && onClickMenu(!state)
+        setActive(!isActive);
       }
 
   return (
-   <div className={cn(style.menuContainer, {[style.active]: state, [style.deactive]: !state})}>
+     <div className={cn(style.menuContainer, {[style.active]: !isActive, [style.deactive]: isActive})}>
      <div className={style.overlay} />
      <div classname={style.menuItems}>
        <ul>
