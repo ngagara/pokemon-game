@@ -4,11 +4,8 @@ import cn from 'classnames';
 
 const NavBar = ({onClickMenu, state}) => {
   
-  const [isActive, setActive] = useState(false);
-
     const handleClick = () => {
        onClickMenu && onClickMenu(!state)
-       setActive(!isActive);
     };
 
   return (
@@ -17,7 +14,7 @@ const NavBar = ({onClickMenu, state}) => {
        <p className={style.brand}>
          LOGO
        </p>
-       <a onClick={handleClick} className={cn(style.menuButton, {[style.active] : isActive})}>
+       <a onClick={handleClick} className={cn(style.menuButton, {[style.active] : state})}>
          <span />
        </a>
      </div>
