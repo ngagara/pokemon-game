@@ -1,6 +1,6 @@
 import style from './layout.module.css';
 
-const Layout = ({id, title, desc, urlBg, colorBg, children}) => {
+const Layout = ({id, title, urlBg, colorBg, children}) => {
 
     return (
         <section className={style.root} id={id} style={ urlBg ? { backgroundImage: `url(${urlBg})`} : { backgroundColor: colorBg }}>
