@@ -1,22 +1,18 @@
-import React, {useState} from "react";
 import style from './nav-bar.module.css';
 import cn from 'classnames';
 
-const NavBar = ({onClickMenu, state}) => {
-  
-    const handleClick = () => {
-       onClickMenu && onClickMenu(!state)
-    };
 
+const NavBar = ({onClickMenu, isOpen, bgActive = false}) => {
+  
   return (
-   <nav id={style.navbar}>
+   <nav id={style.navbar} className={cn({[style.bgActive]: bgActive})}>
      <div className={style.navWrapper}>
        <p className={style.brand}>
          LOGO
        </p>
-       <a onClick={handleClick} className={cn(style.menuButton, {[style.active] : state})}>
+       <div onClick={onClickMenu} className={cn(style.menuButton, {[style.active] : isOpen})}>
          <span />
-       </a>
+         </div>
      </div>
    </nav>
   );

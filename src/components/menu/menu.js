@@ -1,42 +1,31 @@
-import React, {useState} from "react";
+import {Link} from "react-router-dom";
+
+import {MENU} from '../../constants/data';
+
 import style from './menu.module.css';
 import cn from 'classnames';
 
-import NavBar from '../nav-bar/nav-bar';
+const Menu = ({ isOpen, onClickMenu }) => {
 
-
-const Menu = ({onClickMenu, state}) => {
-
-    const handleClick = () => {
-        onClickMenu && onClickMenu(!state)
-      }
+	const closeMenu = () => {
+		onClickMenu()
+	  };
 
   return (
-     <div className={cn(style.menuContainer, {[style.active] : state}, { [style.deactive] : !state})}>
+     <div className={cn(style.menuContainer, 
+     {[style.active] : isOpen == true, 
+     [style.deactive] : isOpen == false})}>
      <div className={style.overlay} />
-     <div classname={style.menuItems}>
-       <ul>
-         <li>
-           <a href="#welcome" onClick={handleClick}>
-             HOME
-           </a>
-         </li>
-         <li>
-           <a href="#game">
-             GAME
-           </a>
-         </li>
-         <li>
-           <a href="#about">
-             ABOUT
-           </a>
-         </li>
-         <li>
-           <a href="#contact">
-             CONTACT
-           </a>
-         </li>
-       </ul>
+     <div className={style.menuItems}>
+     <ul>
+		 { 
+		  MENU.map((item, index) => (
+		  <li>
+			  <Link onClick={closeMenu} key={index} to={item.title.toLowerCase()}>{item.title}</Link>
+		  </li>
+		  ))
+         }
+	</ul>
      </div>
    </div>
   );
