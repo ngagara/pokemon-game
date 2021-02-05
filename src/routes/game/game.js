@@ -25,7 +25,7 @@ function GamePage() {
       <Layout id="2" title="some title" desc="some description" colorBg="#00FFFF">
         <div className={style.flex}>
         {
-          POKEMONS.map(item => <PokemonCard key={item.id} id={item.id} name={item.name} img={item.img} type={item.type} values={item.values} isActive={item.active} onClickCard={handleClickCard}/>)
+          isActive.map(item => <PokemonCard key={item.id} id={item.id} name={item.name} img={item.img} type={item.type} values={item.values} isActive={item.active} onClickCard={handleClickCard}/>)
         }
       </div>
      </Layout>
