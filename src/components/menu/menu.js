@@ -13,15 +13,15 @@ const Menu = ({ isOpen, onClickMenu }) => {
 
   return (
      <div className={cn(style.menuContainer, 
-     {[style.active] : isOpen == true, 
-     [style.deactive] : isOpen == false})}>
+     {[style.active] : isOpen === true, 
+     [style.deactive] : isOpen === false})}>
      <div className={style.overlay} />
      <div className={style.menuItems}>
      <ul>
 		 { 
 		  MENU.map((item, index) => (
 		  <li>
-			  <Link onClick={closeMenu} key={index} to={item.to}>{item.title}</Link>
+			  <Link key={index} onClick={closeMenu} to={item.to}>{item.title}</Link>
 		  </li>
 		  ))
          }

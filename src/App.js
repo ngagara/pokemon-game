@@ -1,7 +1,5 @@
 import { useRouteMatch, Route, Switch, Redirect } from "react-router-dom";
 
-import firebase from 'firebase';
-
 import HomePage from './routes/home/home';
 import GamePage from './routes/game/game';
 import AboutPage from './routes/about/about';
@@ -47,3 +45,4 @@ export default App;
 //prevState
 //наполнение 
 //переименовать компоненеты 
+// кей меню
