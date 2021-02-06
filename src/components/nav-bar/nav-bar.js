@@ -2,7 +2,7 @@ import style from './nav-bar.module.css';
 import cn from 'classnames';
 
 
-const NavBar = ({onClickMenu, isOpen, bgActive = false}) => {
+const NavBar = ({onClickMenu, isOpen, bgActive}) => {
   
   return (
    <nav id={style.navbar} className={cn({[style.bgActive]: bgActive})}>

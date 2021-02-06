@@ -21,7 +21,7 @@ const Menu = ({ isOpen, onClickMenu }) => {
 		 { 
 		  MENU.map((item, index) => (
 		  <li>
-			  <Link onClick={closeMenu} key={index} to={item.title.toLowerCase()}>{item.title}</Link>
+			  <Link onClick={closeMenu} key={index} to={item.to}>{item.title}</Link>
 		  </li>
 		  ))
          }

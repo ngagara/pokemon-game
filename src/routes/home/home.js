@@ -1,7 +1,5 @@
-import HeaderMenu from '../../components/header-menu/header-menu';
 import Header from '../../components/header/header';
 import Layout from '../../components/layout/layout';
-import Footer from '../../components/footer/footer';
 import GamePage from '../game/game';
 
 import bg from '../../images/bg.jpg';
