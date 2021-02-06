@@ -1,5 +1,4 @@
-export const POKEMONS = [
-  {
+export const POKEMONS = [{
     "abilities": [
       "keen-eye",
       "tangled-feet",
@@ -131,4 +130,23 @@ export const POKEMONS = [
       "left": 4
     }
   }
+]
+
+export const MENU = [
+  {
+    title: 'HOME',
+    to: '#welcome',
+  },
+  {
+    title: 'GAME',
+    to: '#game',
+  },
+  {
+    title: 'ABOUT',
+    to: '#about',
+  },
+  {
+    title: 'CONTACT',
+    to: '#contact',
+  },
 ]

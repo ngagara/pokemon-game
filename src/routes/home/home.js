@@ -2,12 +2,9 @@ import HeaderMenu from '../../components/header-menu/header-menu';
 import Header from '../../components/header/header';
 import Layout from '../../components/layout/layout';
 import Footer from '../../components/footer/footer';
-import PokemonCard from '../../components/pokemon-card/pokemonCard';
-import {POKEMONS} from '../../constants/data';
+import GamePage from '../game/game';
 
 import bg from '../../images/bg.jpg';
-
-import style from './home.module.css';
 
 const HomePage = ({onChangePage}) => {
 
@@ -17,7 +14,6 @@ const HomePage = ({onChangePage}) => {
 
   return (
     <>
-    <HeaderMenu /> 
     <Header title="This is title" desc="This is Description!" onClickButton={handleClickButton}/>
     <Layout id="1" title="some title" desc="some description" urlBg={bg}>
     <p>In the game two players face off against one another, one side playing
@@ -34,17 +30,8 @@ const HomePage = ({onChangePage}) => {
        rank is higher, the opponent's card will be captured and changed into
        the player's color instead.</p>
     </Layout>
-    <Layout id="2" title="some title" desc="some description" colorBg="#00FFFF">
-
-      <div className={style.flex}>
-        {
-          POKEMONS.map(item => <PokemonCard key={item.id} id={item.id} name={item.name} img={item.img} type={item.type} values={item.values}/>)
-        }
-      </div>
-
-    </Layout>
+     <GamePage/>
     <Layout id="3" title="some title" desc="some description" urlBg={bg}/>
-    <Footer />
     </>
   );
 }
