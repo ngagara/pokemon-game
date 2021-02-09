@@ -1,6 +1,3 @@
-import style from './contact.module.css';
-import cn from 'classnames';
-
 const ContactPage = () => {
 
   return (

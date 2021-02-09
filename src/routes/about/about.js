@@ -1,6 +1,3 @@
-import style from './about.module.css';
-import cn from 'classnames';
-
 const AboutPage = () => {
 
   return (

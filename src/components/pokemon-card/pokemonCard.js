@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import style from "./pokemonCard.module.css";
 import cardPicture from "../../images/card-back-side.jpg";
 import cn from 'classnames';
