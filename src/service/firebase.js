@@ -43,6 +43,14 @@ class Firebase {
 
   }
 
+  setActive = (cards) => {
+
+    firebase.database().ref(`pokemons/${cards}`).set({
+      active: true
+
+    });
+  }
+
 
 }
 

@@ -15,13 +15,18 @@ function StartPage() {
    
   console.log(pokemonContext);
 
+  const handleClick = () => {
+    hisyory.push('/game/board');
+    
+  }
+
     return (
       <Layout id="2" title="some title" colorBg="#00FFFF">
-        <button onClick={pokemonContext.addNewCard}>Star</button>
+        <button onClick={handleClick}>Star</button>
         <div className={style.flex}>
-        {
-          Object.entries(pokemonContext.isPokemons).map(([key, {id, name, img, type, values, active}])=> <PokemonCard key={key} id={id} name={name} img={img} type={type} values={values} isActive={active} onClickCard={pokemonContext.handleClickCard}/>)
-        } 
+        {/* {
+          Object.entries(isPokemons).map(([key, {id, name, img, type, values, active}])=> <PokemonCard key={key} id={id} name={name} img={img} type={type} values={values} isActive={active} onClickCard={handleClickCard}/>)
+        } */}
       </div>
      </Layout>
     );

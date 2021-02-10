@@ -16,6 +16,7 @@ function GamePage() {
   const firebase = useContext(FireBaseContext);
 
   const [isPokemons, setPokemons] = useState({});
+  const [selectPokemons, setselectPokemons] = useState([]);
 
 
   useEffect(() => {
@@ -24,38 +25,12 @@ function GamePage() {
     });
   },[]);
 
+  
+  const addCard = () => {
+    
 
-  const addNewCard = () => {
-
-    const pidge = {
-      "abilities": [
-        "keen-eye",
-        "tangled-feet",
-        "big-pecks"
-      ],
-      "stats": {
-        "hp": 63,
-        "attack": 60,
-        "defense": 55,
-        "special-attack": 50,
-        "special-defense": 50,
-        "speed": 71
-      },
-      "type": "flying",
-      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
-      "name": "pidgeotto",
-      "base_experience": 122,
-      "height": 11,
-      "id": 17,
-      "values": {
-        "top": "A",
-        "right": 2,
-        "bottom": 7,
-        "left": 5
-      }
-    }
-
-   firebase.addPokemon(pidge)
+   
+   firebase.addPokemon()
 
   };
 
@@ -77,7 +52,7 @@ function GamePage() {
   };
   
   return (
-    <PokemonContext.Provider value={{isPokemons, handleClickCard, addNewCard, useEffect}}>
+    <PokemonContext.Provider value={{selectPokemons, addCard}}>
        <Switch>
           <Route path={`${match.path}/`} exact component={StartPage} />
           <Route path={`${match.path}/board`} component={BoardPage} />
