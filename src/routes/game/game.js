@@ -1,58 +1,40 @@
-import React, { useState, useEffect, useContext } from "react";
 import { useRouteMatch, Route, Switch} from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 
-import { FireBaseContext } from "../../context/firebaseContext";
 import { PokemonContext } from "../../context/pokemonContext";
 
-import StartPage from './routes/start/start';
-import BoardPage from './routes/board/board';
-import FinishPage from './routes/finish/finish';
-
+import StartPage from './routes/Start/Start';
+import BoardPage from './routes/Board/Board';
+import FinishPage from './routes/Finish/Finish';
 
 function GamePage() {
 
   const match = useRouteMatch();
 
-  const firebase = useContext(FireBaseContext);
-
-  const [isPokemons, setPokemons] = useState({});
-  const [selectPokemons, setselectPokemons] = useState([]);
-
-
-  useEffect(() => {
-    firebase.getPokemonSocket((pokemons) => {
-       setPokemons(pokemons);
-    });
-  },[]);
+  const [selectedPokemons, setSelectedPokemons] = useState({});
 
   
-  const addCard = () => {
-    
-
+  const handelSelectedPokemons = (key, pokemon) => {
+    console.log(pokemon);
    
-   firebase.addPokemon()
-
+    setSelectedPokemons(prevState => {
+      if(prevState[key]) {
+        const copyState = {...prevState};
+        delete copyState[key];
+        return copyState
+      }
+      return {
+        ...prevState,
+        [key] : pokemon
+      }
+     })
   };
 
-  const handleClickCard = (id) => {
-    setPokemons((prevState) => {
-      return Object.entries(prevState).reduce((acc, item) => {
-        const pokemon = {...item[1]};
-        if (pokemon.id === id) {
-            pokemon.active = !pokemon.active;
-        };
-        acc[item[0]] = pokemon;
-         
-        firebase.postPokemon(item[0], pokemon)
-        
-        return acc;
-    }, {});
-    
-    });
-  };
-  
   return (
-    <PokemonContext.Provider value={{selectPokemons, addCard}}>
+    <PokemonContext.Provider value={{
+      pokemons: selectedPokemons,
+      onSelectedPokemons: handelSelectedPokemons
+    }}>
        <Switch>
           <Route path={`${match.path}/`} exact component={StartPage} />
           <Route path={`${match.path}/board`} component={BoardPage} />

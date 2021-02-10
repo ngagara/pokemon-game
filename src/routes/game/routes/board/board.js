@@ -1,9 +1,23 @@
-import style from '../board/board.module.css';
+import React, { useContext } from "react";
+import PokemonCard from "../../../../components/PkemonCard/PokemonCard";
+
+
+import { PokemonContext } from '../../../../context/pokemonContext';
+import style from '../Board/board.module.css';
 
 const BoardPage = () => {
+
+  const { pokemons } = useContext(PokemonContext);
+
     return (
         <div className={style.root}>
 						<div className={style.playerOne}>
+
+                            {
+                                Object.values(pokemons).map(({id, name, img, type, values}) => (
+                                <PokemonCard className={style.card} key={id} id={id} name={name} img={img} type={type} values={values} isActive={true} minimize/>
+                                ))
+                            }
 
 						</div>
             <div className={style.board}>

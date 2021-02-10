@@ -30,26 +30,18 @@ class Firebase {
 
   }
 
-  postPokemon = (key, pokemon) => {
+  // postPokemon = (key, pokemon) => {
 
-    return this.database.ref(`pokemons/${key}`).set(pokemon);
+  //   return this.database.ref(`pokemons/${key}`).set(pokemon);
 
-  }
+  // }
 
-  addPokemon = (data) => {
+  // addPokemon = (data) => {
 
-    const newKey = this.database.ref().child('pokemons').push().key;
-    this.database.ref("pokemons/" + newKey).set(data)
+  //   const newKey = this.database.ref().child('pokemons').push().key;
+  //   this.database.ref("pokemons/" + newKey).set(data)
 
-  }
-
-  setActive = (cards) => {
-
-    firebase.database().ref(`pokemons/${cards}`).set({
-      active: true
-
-    });
-  }
+  // }
 
 
 }

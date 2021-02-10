@@ -1,15 +1,19 @@
 import style from "./pokemonCard.module.css";
 import cn from 'classnames';
 
-  const PokemonCard = ({ name, img, id, type, values, isActive = true, onClickCard, className, minimize}) => {
+  const PokemonCard = ({ name, img, id, type, values, isActive, isSelected, onClickCard, className, minimize}) => {
 
     const handleClick = () => {
       onClickCard && onClickCard(id);
     };
 
   return (
-    <div className={cn(className)} onClick={handleClick}>
-      <div className={cn(style.pokemonCard, {[style.active]: isActive})}>
+      <div className={cn(className, style.pokemonCard, {
+          [style.active]: isActive,
+          [style.selected]: isSelected,
+        })}
+           onClick={handleClick}
+      >
              <div className={style.cardFront}>
                  <div className={cn(style.wrap, style.front)}>
                      <div className={cn(style.pokemon, style[type])}>
@@ -40,7 +44,6 @@ import cn from 'classnames';
              </div>
          
          </div>
-    </div>
   );
 };
 
