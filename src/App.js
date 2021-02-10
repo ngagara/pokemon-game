@@ -1,4 +1,6 @@
 import { useRouteMatch, Route, Switch, Redirect } from "react-router-dom";
+import { FireBaseContext } from "./context/firebaseContext";
+
 
 import HomePage from './routes/home/home';
 import GamePage from './routes/game/game';
@@ -10,13 +12,15 @@ import Footer from "./components/footer/footer";
 
 import style from './app.module.css';
 import cn from 'classnames';
+import Firebase from "./service/firebase";
 
 const App = () => {
 
   const match = useRouteMatch('/');
 
    return (
-       <Switch>
+     <FireBaseContext.Provider value={new Firebase()}>
+        <Switch>
          <Route path="/404" component={NotFound}></Route>
          <Route>
            <>
@@ -36,13 +40,8 @@ const App = () => {
            </>
          </Route>
        </Switch>
+     </FireBaseContext.Provider>  
    )
 };
 
 export default App;
-
-//старт с нот фаунд
-//prevState
-//наполнение 
-//переименовать компоненеты 
-// кей меню
