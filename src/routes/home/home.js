@@ -1,6 +1,6 @@
 import Header from '../../components/Header/Header';
 import Layout from '../../components/Layout/Layout';
-import GamePage from '../Game/Game';
+import GamePage from '../Game/GamePage';
 
 import bg from '../../images/bg.jpg';
 

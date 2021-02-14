@@ -9,3 +9,8 @@ ReactDOM.render(
 document.getElementById('root')
 );
 
+
+// стартовая стр.
+// стили кнопки и селекта каоточек
+//useEffect
+// 
