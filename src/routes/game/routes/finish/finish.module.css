@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px auto;
+    font-size: 24px;
+    background-color: #df52b9;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background-color: #df52b9;
+
+}
+
+.card {
+    width: 300px;
+    height: 380px;
+    cursor: pointer;
+}
