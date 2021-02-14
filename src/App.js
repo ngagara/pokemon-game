@@ -1,27 +1,31 @@
-import { useRouteMatch, Route, Switch, Redirect } from "react-router-dom";
+import { useLocation, Route, Switch, Redirect } from "react-router-dom";
+import { FireBaseContext } from "./context/firebaseContext";
 
-import HomePage from './routes/home/home';
-import GamePage from './routes/game/game';
-import AboutPage from './routes/about/about';
-import ContactPage from './routes/contact/contact';
-import NotFound from './routes/not-found/not-found';
-import HeaderMenu from "./components/header-menu/header-menu";
-import Footer from "./components/footer/footer";
+import HomePage from './routes/Home/Home';
+import GamePage from './routes/Game/Game';
+import AboutPage from './routes/About/About';
+import ContactPage from './routes/Contact/Contact';
+import NotFound from './routes/NotFound/NotFound';
+import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
+import Footer from "./components/Footer/Footer";
 
 import style from './app.module.css';
 import cn from 'classnames';
+import Firebase from "./service/firebase";
 
 const App = () => {
 
-  const match = useRouteMatch('/');
+  const location =  useLocation('/');
+  const isPadding = location.pathname === '/' || location.pathname === '/game/board'
 
    return (
-       <Switch>
+     <FireBaseContext.Provider value={new Firebase()}>
+        <Switch>
          <Route path="/404" component={NotFound}></Route>
          <Route>
            <>
-           <HeaderMenu bgActive={!match.isExact}/>
-           <div className={cn(style.wrap, {[style.isHomePage]: match.isExact})}>
+           <HeaderMenu bgActive={!isPadding}/>
+           <div className={cn(style.wrap, {[style.isHomePage]: isPadding})}>
              <Switch>
               <Route path="/" exact component={HomePage}></Route>
               <Route path="/game" component={GamePage}></Route>
@@ -36,13 +40,8 @@ const App = () => {
            </>
          </Route>
        </Switch>
+     </FireBaseContext.Provider>  
    )
 };
 
 export default App;
-
-//старт с нот фаунд
-//prevState
-//наполнение 
-//переименовать компоненеты 
-// кей меню

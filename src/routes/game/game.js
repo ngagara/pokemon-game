@@ -1,90 +1,47 @@
-import React, { useState, useEffect } from "react";
+import { useRouteMatch, Route, Switch} from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 
-import database from "../../service/service";
+import { PokemonContext } from "../../context/pokemonContext";
 
-import PokemonCard from '../../components/pokemon-card/pokemonCard';
-import Layout from '../../components/layout/layout';
-
-import style from './game.module.css';
+import StartPage from './routes/Start/Start';
+import BoardPage from './routes/Board/Board';
+import FinishPage from './routes/Finish/Finish';
 
 function GamePage() {
 
-  const [isPokemons, setPokemons] = useState({});
+  const match = useRouteMatch();
 
-  useEffect(() => {
+  const [selectedPokemons, setSelectedPokemons] = useState({});
 
-    database.ref('pokemons').once('value', (snapshot) => {
-      setPokemons(snapshot.val());
-    })
-
-  },[])
-
-  const pidge = {
-    "abilities": [
-      "keen-eye",
-      "tangled-feet",
-      "big-pecks"
-    ],
-    "stats": {
-      "hp": 63,
-      "attack": 60,
-      "defense": 55,
-      "special-attack": 50,
-      "special-defense": 50,
-      "speed": 71
-    },
-    "type": "flying",
-    "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
-    "name": "pidgeotto",
-    "base_experience": 122,
-    "height": 11,
-    "id": 17,
-    "values": {
-      "top": "A",
-      "right": 2,
-      "bottom": 7,
-      "left": 5
-    }
-  }
-
-  const addNewCard = () => {
-    const newKey = database.ref().child('pokemons').push().key;
-    
-    database.ref("pokemons/" + newKey).set(pidge);
-
-    database.ref('pokemons').once('value', (snapshot) => {
-      setPokemons(snapshot.val());
-    })
-   };
-
-  const handleClickCard = (id) => {
-    setPokemons((prevState) => {
-
-      return Object.entries(prevState).reduce((acc, item) => {
-        const pokemon = {...item[1]};
-        if (pokemon.id === id) {
-            pokemon.active = !pokemon.active;
-            database.ref('pokemons/'+ item[0]).set(pokemon);
-        };
-        acc[item[0]] = pokemon;
-        
-        return acc;
-    }, {});
-    
-    });
-  };
   
+  const handelSelectedPokemons = (key, pokemon) => {
+    console.log(pokemon);
+   
+    setSelectedPokemons(prevState => {
+      if(prevState[key]) {
+        const copyState = {...prevState};
+        delete copyState[key];
+        return copyState
+      }
+      return {
+        ...prevState,
+        [key] : pokemon
+      }
+     })
+  };
 
-    return (
-      <Layout id="2" title="some title" desc="some description" colorBg="#00FFFF">
-        <button onClick={addNewCard}>Add New Pokemon</button>
-        <div className={style.flex}>
-        {
-          Object.entries(isPokemons).map(([key, {id, name, img, type, values, active}])=> <PokemonCard key={key} id={id} name={name} img={img} type={type} values={values} isPokemons={active} onClickCard={handleClickCard}/>)
-        }
-      </div>
-     </Layout>
-    );
+  return (
+    <PokemonContext.Provider value={{
+      pokemons: selectedPokemons,
+      onSelectedPokemons: handelSelectedPokemons
+    }}>
+       <Switch>
+          <Route path={`${match.path}/`} exact component={StartPage} />
+          <Route path={`${match.path}/board`} component={BoardPage} />
+          <Route path={`${match.path}/finish`} component={FinishPage} />
+      </Switch>
+    </PokemonContext.Provider>
+  );
   }
   
   export default GamePage;

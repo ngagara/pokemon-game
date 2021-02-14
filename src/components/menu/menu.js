@@ -20,8 +20,8 @@ const Menu = ({ isOpen, onClickMenu }) => {
      <ul>
 		 { 
 		  MENU.map((item, index) => (
-		  <li>
-			  <Link key={index} onClick={closeMenu} to={item.to}>{item.title}</Link>
+		  <li key={index}>
+			  <Link onClick={closeMenu} to={item.to}>{item.title}</Link>
 		  </li>
 		  ))
          }

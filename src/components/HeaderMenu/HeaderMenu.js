@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Menu from '../menu/menu';
-import NavBar from '../nav-bar/nav-bar';
+import Menu from '../Menu/Menu';
+import NavBar from '../NavBar/NavBar';
 
 const HeaderMenu = ({bgActive}) => {
 
