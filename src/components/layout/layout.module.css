@@ -6,13 +6,21 @@
     z-index: 5;
     background-attachment: fixed;
 }
-
-button {
-    width: 200px;
-    height: 50px;
+.button {
+    font-family: 'Overlock', Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
     margin-top: 0;
-    margin-bottom: 30px;
-    background-color: darkmagenta;
+    font-size: 24px;
+    background-color: #df52b9;
+    opacity: 0.5;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #df52b9;
+    opacity: 1;
 }
 
 .root .wrapper {
@@ -34,6 +42,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .root .title h3 {
@@ -64,6 +73,9 @@ button {
 .root .desc.full {
     grid-column-end: span 4;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .root .desc {

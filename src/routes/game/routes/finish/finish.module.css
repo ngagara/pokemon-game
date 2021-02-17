@@ -1,23 +1,36 @@
-.flex {
+.wrapp {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 10px auto;
-    font-size: 24px;
-    background-color: #df52b9;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-button:hover {
-    background-color: #df52b9;
-
+.flex {
+    margin: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 20px;
 }
 
 .card {
-    width: 300px;
+    width: 18vw;
     height: 380px;
     cursor: pointer;
+}
+
+.button {
+    font-family: 'Overlock', Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin-top: 0;
+    font-size: 24px;
+    background-color: #df52b9;
+    opacity: 0.5;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #df52b9;
+    opacity: 1;
 }

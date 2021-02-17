@@ -9,6 +9,23 @@
     z-index: 1;
 }
 
+.button {
+    font-family: 'Overlock', Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin-top: 0;
+    font-size: 24px;
+    background-color: #df52b9;
+    opacity: 0.5;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #df52b9;
+    opacity: 1;
+}
+
 .root:before {
     content: '';
     position: fixed;

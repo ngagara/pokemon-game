@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 18vw);
     grid-gap: 40px;
+    justify-content: center;
 }
 
 .card {
@@ -10,23 +11,22 @@
     cursor: pointer;
 }
 
-button {
+.button {
     font-family: 'Overlock', Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
     padding: 10px 20px;
+    width: 150px;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-size: 24px;
     background-color: #df52b9;
-    opacity: 0.5;
+    opacity: 1;
     outline: none;
     border: none;
     border-radius: 10px;
 }
 
-button:hover {
+.button:hover {
     background-color: #df52b9;
-    opacity: 1;
+    opacity: 0.5;
 
 }

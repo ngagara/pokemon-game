@@ -45,9 +45,8 @@ function StartPage() {
   };
 
     return (
-      <Layout id="2" title="CHOOSE POKEMON" colorBg="#00FFFF">
-
-        <button onClick={handleStartGameClick} disabled={Object.keys(pokemonContext.pokemons).length < 5}>START</button>
+      <Layout id="2" title="CHOOSE FIVE POKEMON" colorBg="#00FFFF">
+        <button className={style.button} onClick={handleStartGameClick} disabled={Object.keys(pokemonContext.pokemons).length < 5}>START</button>
         <div className={style.grid}>
         {
           Object.entries(isPokemons).map(([key, {id, name, img, type, values, selected}])=>
