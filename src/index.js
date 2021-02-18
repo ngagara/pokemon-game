@@ -9,3 +9,5 @@ ReactDOM.render(
 document.getElementById('root')
 );
 
+// баги в борд
+// выбор только одну карточку 

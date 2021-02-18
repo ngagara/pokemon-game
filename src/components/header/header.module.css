@@ -7,9 +7,9 @@
     min-height: 100vh;
     margin: 0 auto;
     z-index: 1;
-}
-
-.root:before {
+  }
+  
+  .root:before {
     content: '';
     position: fixed;
     background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true);
@@ -19,9 +19,9 @@
     z-index: -1;
     opacity: 0;
     animation: stars-move-in 1000ms 300ms forwards;
-}
-
-@keyframes stars-move-in {
+  }
+  
+  @keyframes stars-move-in {
     from {
         background-position-y: -100px;
     }
@@ -29,9 +29,9 @@
         opacity: 1;
         background-position-y: 0;
     }
-}
-
-.forest {
+  }
+  
+  .forest {
     position: absolute;
     bottom: -300px;
     left: 0;
@@ -42,9 +42,9 @@
     opacity: 0;
     animation: forest-move-in 1000ms 500ms forwards;
     border-bottom: 300px solid #181d23;
-}
-
-@keyframes forest-move-in {
+  }
+  
+  @keyframes forest-move-in {
     from {
         background-position-y: 150%;
     }
@@ -52,30 +52,9 @@
         opacity: 1;
         background-position-y: 100%;
     }
-}
-
-.silhouette {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Silhouette.svg?sanitize=true) bottom left no-repeat;
-    width: 50%;
-    height: 50%;
-    opacity: 0;
-    animation: silhouette-move-in 1000ms 800ms forwards;
-}
-
-@keyframes silhouette-move-in {
-    from {
-        background-position-x: 0;
-    }
-    to {
-        opacity: 1;
-        background-position-x: 50%;
-    }
-}
-
-.moon {
+  }
+  
+  .moon {
     position: absolute;
     top: 0;
     right: 0;
@@ -88,9 +67,9 @@
     z-index: -1;
     opacity: 0;
     animation: moon-move-in 1.2s 1s forwards;
-}
-
-@keyframes moon-move-in {
+  }
+  
+  @keyframes moon-move-in {
     from {
         opacity: 0;
         background-position: right 150%;
@@ -99,9 +78,9 @@
         opacity: 1;
         background-position: top right;
     }
-}
-
-.container {
+  }
+  
+  .container {
     width: fit-content;
     position: absolute;
     right: 0;
@@ -110,9 +89,9 @@
     opacity: 0;
     transform: translate(-50%, -50%);
     animation: text-fade-in 1000ms 800ms forwards;
-}
-
-@keyframes text-fade-in {
+  }
+  
+  @keyframes text-fade-in {
     from {
         right: 0;
     }
@@ -120,25 +99,25 @@
         opacity: 1;
         right: 25%;
     }
-}
-
-.container h1 {
+  }
+  
+  .container h1 {
     font-size: 65px;
     font-weight: normal;
     font-style: italic;
     color: #fafafa;
     line-height: 65px;
-}
-
-.container p {
+  }
+  
+  .container p {
     font-size: 28px;
     font-weight: normal;
     color: #fafafa;
     line-height: 32px;
     margin-bottom: 24px;
-}
-
-@media only screen and (max-width: 649px) {
+  }
+  
+  @media only screen and (max-width: 649px) {
     .container {
         right: 50%;
         top: 10%;
@@ -146,7 +125,7 @@
         transform: translate(50%, 0);
         animation: text-fade-in 1000ms 800ms forwards;
     }
-
+  
     @keyframes text-fade-in {
         from {
             right: 0;
@@ -156,8 +135,27 @@
             right: 50%;
         }
     }
-
+  
     .silhouette {
         width: 100%;
     }
-}
+  }
+  
+  .button {
+    background-color: #f300b4;
+    color: #fff;
+    border: 1px solid transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .button:hover {
+    background-color: transparent;
+    color: #f300b4;
+    border: 1px solid #f300b4;
+    transition: .5s;
+  }

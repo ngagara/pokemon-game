@@ -6,17 +6,34 @@
     z-index: 5;
     background-attachment: fixed;
 }
+.button {
+    font-family: 'Overlock', Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin-top: 0;
+    font-size: 24px;
+    background-color: #df52b9;
+    opacity: 0.5;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: #df52b9;
+    opacity: 1;
+}
 
 .root .wrapper {
+
     padding: 5rem 1rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .root article {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    padding: 3rem 0; 
+    grid-template-columns: repeat(4, 1fr); 
+     grid-gap: 1rem;
     padding: 3rem 0;
 }
 
@@ -25,6 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .root .title h3 {
@@ -55,6 +73,9 @@
 .root .desc.full {
     grid-column-end: span 4;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .root .desc {

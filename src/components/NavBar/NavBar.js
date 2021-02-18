@@ -8,7 +8,7 @@ const NavBar = ({onClickMenu, isOpen, bgActive}) => {
    <nav id={style.navbar} className={cn({[style.bgActive]: bgActive})}>
      <div className={style.navWrapper}>
        <p className={style.brand}>
-         LOGO
+         POKEMON GAME
        </p>
        <div onClick={onClickMenu} className={cn(style.menuButton, {[style.active] : isOpen})}>
          <span />

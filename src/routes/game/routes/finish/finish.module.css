@@ -1,0 +1,50 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    background-color: #DEFDE0;
+}
+
+.flex {
+    margin: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 20px;
+}
+
+.title {
+    font-size: 2.4rem;
+    font-family: 'Overlock', Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+}
+
+.subtitle {
+    font-size: 2.4rem;
+    font-family: 'Overlock', Arial, Helvetica, sans-serif;
+}
+
+.card {
+    width: 18vw;
+    height: 380px;
+    cursor: pointer;
+}
+
+.button {
+    background-color: #f300b4;
+    color: #fff;
+    border: 1px solid transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .button:hover {
+    background-color: transparent;
+    color: #f300b4;
+    border: 1px solid #f300b4;
+    transition: .5s;
+  }
