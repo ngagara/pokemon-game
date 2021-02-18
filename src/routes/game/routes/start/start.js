@@ -25,7 +25,7 @@ function StartPage() {
   },[]);
   
   const handleStartGameClick = () => {
-    hisyory.push('/game/board');
+    hisyory.push('/pokemon-game/game/board');
   }
 
   const handleActiveSelected = (key) => {

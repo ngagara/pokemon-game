@@ -2,18 +2,14 @@
 export const MENU = [
   {
     title: 'HOME',
-    to: '/',
+    to: '/pokemon-game/',
   },
   {
     title: 'GAME',
-    to: '/game',
+    to: '/pokemon-game/game',
   },
   {
     title: 'ABOUT',
-    to: '/about',
-  },
-  {
-    title: 'CONTACT',
-    to: '/contact',
+    to: '/pokemon-game/about',
   },
 ]

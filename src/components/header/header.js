@@ -7,7 +7,7 @@ const Header = ({title, desc}) => {
   const hisyory = useHistory();
 
   const handleClick = () => {
-    hisyory.push('/game')
+    hisyory.push('/pokemon-game/game')
   }
 
     return (

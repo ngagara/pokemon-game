@@ -6,15 +6,13 @@ import { PokemonContext } from "../../context/pokemonContext";
 import StartPage from './routes/Start/Start';
 import BoardPage from './routes/Board/Board';
 import FinishPage from './routes/Finish/Finish';
-import NotFound from '../NotFound/NotFound';
-
+import LoosPage from './routes/Loos/Loos';
 
 function GamePage() {
 
   const match = useRouteMatch();
 
   const [selectedPokemons, setSelectedPokemons] = useState({});
-  const [player1Cards, setPlayer1Cards] = useState({});
   const [player2Cards, setPlayer2Cards] = useState({});
 
   const handelSelectedPokemons = (key, pokemon) => {
@@ -32,9 +30,12 @@ function GamePage() {
      })
   };
 
-  const setCards = (player1, player2) => {
-    setPlayer1Cards(player1);
+  const setCards = (player2) => {
     setPlayer2Cards(player2)
+  };
+   
+  const clearContext = () => {
+    setSelectedPokemons({});
   };
 
   return (
@@ -42,22 +43,15 @@ function GamePage() {
       pokemons: selectedPokemons,
       onSelectedPokemons: handelSelectedPokemons,
       setCardsPlayer: setCards,
-      player1: player1Cards,
+      clearContext: clearContext, 
       player2: player2Cards
     }}>
       <Switch>
+        <Route path={`${match.path}/`} exact component={StartPage} />
+        <Route path={`${match.path}/board`} component={BoardPage} />
+        <Route path={`${match.path}/finish`} component={FinishPage} />
+        <Route path={`${match.path}/loos`} component={LoosPage} />
       </Switch>
-       <Route path="/404" component={NotFound}></Route>
-       <Route>
-             <Switch>
-                <Route path={`${match.path}/`} exact component={StartPage} />
-                <Route path={`${match.path}/board`} component={BoardPage} />
-                <Route path={`${match.path}/finish`} component={FinishPage} />
-                {/* <Route path={`${match.path}/finish`} render = {() => (
-                      <Redirect to="/404"/>
-                    )}/> */}
-             </Switch>
-       </Route>
     </PokemonContext.Provider>
   );
   }

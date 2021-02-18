@@ -44,7 +44,7 @@ const BoardPage = () => {
   const [steps, setSteps] = useState(0);
 
   if (Object.keys(pokemons).length === 0) {
-    history.replace('/game/');
+    history.replace('/pokemon-game/game/');
   }
 
   useEffect(async () => {
@@ -62,8 +62,7 @@ const BoardPage = () => {
         }));
     });
 
-    setCardsPlayer(player1, player2Request.data);
-
+    setCardsPlayer(player2Request.data);
 
   },[]);
 
@@ -107,14 +106,11 @@ const BoardPage = () => {
         const [count1, count2] = counterWins(board, player1, player2)
                  
         if (count1 > count2) {
-             alert("win")
-             history.push('/game/finish');
+             history.push('/pokemon-game/game/finish');
         } else if (count1 < count2) {
-             alert("los") 
-             history.push('/game');
+             history.push('/pokemon-game/game/loos');
         }else {
-             alert("draw")   
-             history.push('/game');
+             history.push('/pokemon-game/game/loos');
         }
     }
     },[steps]);

@@ -1,6 +1,6 @@
 import Header from '../../components/Header/Header';
 import Layout from '../../components/Layout/Layout';
-import GamePage from '../Game/GamePage';
+// import GamePage from '../Game/GamePage';
 
 import bg from '../../images/bg.jpg';
 
@@ -12,7 +12,7 @@ const HomePage = ({onChangePage}) => {
 
   return (
     <>
-    <Header title="POKEMON GAME" desc="Game Game Game!" onClickButton={handleClickButton}/>
+    <Header title="POKEMON GAME" desc="This is simple triple triad card game" onClickButton={handleClickButton}/>
     <Layout id="1" title="RULES" urlBg={bg}>
     <p>In the game two players face off against one another, one side playing
        as "blue", the other as "red" on a 3x3 grid. Each player has five
@@ -28,8 +28,7 @@ const HomePage = ({onChangePage}) => {
        rank is higher, the opponent's card will be captured and changed into
        the player's color instead.</p>
     </Layout>
-     <GamePage/>
-    <Layout id="3" title="some title" desc="some description" urlBg={bg}/>
+     {/* <GamePage/> */}
     </>
   );
 }
